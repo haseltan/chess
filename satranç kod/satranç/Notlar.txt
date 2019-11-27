@@ -1,0 +1,8 @@
+Oyun bittikten sonra global olmasý gerekmeyen deðiþkenler localleþtirilecek.
+
+Basýlan taþýn yazýsý altý çizili olacak.
+
+Basýlan taþýn gidebileceði yerler yeþil çerçeveli gitme yollarý noktalý yeþil gidemeyeceði yerler kýrmýzý çerçeve
+gidemeyeceði yollar kýrmýzý noktalý çerçeve olacak.
+
+Kalede sorun var.

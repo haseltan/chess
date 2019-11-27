@@ -1,0 +1,38 @@
+document.getElementById("a8").onclick
+document.getElementById("g1").innerHTML   			clickedThing
+
+	BblackTurn 
+	BwhiteTurn
+______________                               ____________________                             ______________________			______________________
+ BEYAZ KALE = 16                             Beyaz Fil = 27				      BEYAZ ŞAH = 8  				BEYAZ PİYON	  
+______________                               ______________________ 			      _____________________			______________________
+--atamalar--                                 --atamalar--				      --atamalar--				--atamalar--
+destinations2                                destinations				      destinations				destinations
+destinations                                 destinations2				      whiteAtCheckList				whiteKaleCheckList
+																	blackPieceCheckList
+whiteKaleCheckList                           whiteAtCheckList				      --temizlemeler--				--temizlemeler--
+straightObstacleFreeList	             diagonalObstacleFreeList	 		      pieceFreeCheckList			pieceFreeCheckList
+											      blackPieceCheckList			blackPieceCheckList
+
+--temizlemeler--                             --temizlemeler--
+pieceFreeCheckList                           pieceFreeCheckList
+blackPieceCheckList                          blackPieceCheckList
+
+
+
+  
+____________________                         _______________________________________________________
+BEYAZ AT = 8                                 Beyaz Vezir
+_____________________                        ______________________________________________________
+--atamalar--				     --atamalar--                         --temizlemeler--
+inBoard                                      destinations 			  pieceFreeCheckList
+destinations                                 destinations2		 	  blackPieceCheckList
+destinations2                                whiteKaleCheckList
+				             straightObstacleFreeList
+whiteAtCheckList 			     destinationsVezir
+					     destinationsVezir2
+					     whiteAtCheckList
+--temizlemeler--			     diagonalObstacleFreeList
+pieceFreeCheckList			     
+blackPieceCheckList
+
