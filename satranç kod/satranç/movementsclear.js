@@ -181,10 +181,11 @@ function moveClear() {
 		  checkPieceFreeFil(destinations[reseterCounter]);
 		  checkBlackPieceFreeFil(destinations[reseterCounter]);
 		}
-		console.log("pieceFreeCheckList:");
+		/*console.log("pieceFreeCheckList:");
 		console.log(pieceFreeCheckList);
 		console.log("blackPieceCheckList:");
 		console.log(blackPieceCheckList);
+		*/
 		if (pieceFreeCheckList[0]) {
 	        document.getElementById(destinations[0]).onclick = "";
 		} else if (!blackPieceCheckList[0]) {
@@ -740,10 +741,11 @@ function moveClear() {
 		  checkPieceFreeAt(destinations[reseterCounter]);
 		  checkWhitePieceFreeAt(destinations[reseterCounter]);
 		}
-		console.log("pieceFreeCheckList:");
+		/*console.log("pieceFreeCheckList:");
 		console.log(pieceFreeCheckList);
 		console.log("whitePieceCheckList:");
 		console.log(whitePieceCheckList);
+		*/
 		if (destinations[0]){
 			if (pieceFreeCheckList[0]) {
 				document.getElementById(destinations[0]).onclick = "";
@@ -1002,10 +1004,11 @@ function moveClear() {
 		  checkPieceFree(destinations[reseterCounter]);
 		  checkWhitePieceFree(destinations[reseterCounter]);
 		}
-		console.log("pieceFreeCheckList:");
+		/*console.log("pieceFreeCheckList:");
 		console.log(pieceFreeCheckList);
 		console.log("whitePieceCheckList:");
 		console.log(whitePieceCheckList);
+		*/
 		if (pieceFreeCheckList[0]) {
 	        document.getElementById(destinations[0]).onclick = "";
 		} else if (!whitePieceCheckList[0]) {
@@ -1099,10 +1102,11 @@ function moveClear() {
 		  checkPieceFreeFil(destinationsVezir[reseterCounter]);
 		  checkWhitePieceFreeFil(destinationsVezir[reseterCounter]);
 		}
-		console.log("pieceFreeCheckList:");
+		/*console.log("pieceFreeCheckList:");
 		console.log(pieceFreeCheckList);
 		console.log("whitePieceCheckList:");
 		console.log(whitePieceCheckList);
+		*/
 		if (pieceFreeCheckList[0]) {
 	        document.getElementById(destinationsVezir[0]).onclick = "";
 		} else if (!whitePieceCheckList[0]) {

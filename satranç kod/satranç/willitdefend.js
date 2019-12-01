@@ -126,14 +126,14 @@ function shahDefenderPlaces() {
 				}
 			}
 		//şah aşağıda
-		} else {
+		} else if (lettersAndNumbers.indexOf(shahArray[0]) > lettersAndNumbers.indexOf(shahAttackerArray[0])){
 			//şah solda
 			if (lettersAndNumbers.indexOf(shahArray[1]) < lettersAndNumbers.indexOf(shahAttackerArray[1])) {
 				way = lettersAndNumbers.indexOf(shahArray[0]) - lettersAndNumbers.indexOf(shahAttackerArray[0]);
 				var i = lettersAndNumbers.indexOf(shahArray[0]) - 1;
 				var i2 = 1 + lettersAndNumbers.indexOf(shahArray[1]);
-				var t = i - way;
-				for (i; i > t; i++) {
+				var t = lettersAndNumbers.indexOf(shahArray[0]) - way;
+				for (i; i >= t; i--) {
 					defenderPlaceMaker[0] = lettersAndNumbers[i];
 					defenderPlaceMaker[1] = lettersAndNumbers[i2];
 					shahDefenderPlacesList[shahDefenderPlacesCounter] = defenderPlaceMaker.join("");
@@ -141,17 +141,21 @@ function shahDefenderPlaces() {
 					i2++;
 				}
 			//şah sağda
-			} else {
+			} else if (lettersAndNumbers.indexOf(shahArray[1]) > lettersAndNumbers.indexOf(shahAttackerArray[1])){
 				way = lettersAndNumbers.indexOf(shahArray[0]) - lettersAndNumbers.indexOf(shahAttackerArray[0]);
-				var i = 1 + lettersAndNumbers.indexOf(shahArray[0]);
+				var i = lettersAndNumbers.indexOf(shahArray[0]) - 1;
 				var i2 = lettersAndNumbers.indexOf(shahArray[1]) - 1;
-				var t = i - way;
-				for (i; i > t; i++) {
+				var t = lettersAndNumbers.indexOf(shahArray[0]) - way;
+				console.log("OLUYORRRRRRRR22222222");
+				console.log(i);
+				console.log(t);
+				for (i; i >= t; i--) {
 					defenderPlaceMaker[0] = lettersAndNumbers[i];
 					defenderPlaceMaker[1] = lettersAndNumbers[i2];
 					shahDefenderPlacesList[shahDefenderPlacesCounter] = defenderPlaceMaker.join("");
 					shahDefenderPlacesCounter++;
 					i2--;
+					console.log("OLUYORRRRRRRR");
 				}
 			}
 		}
@@ -238,8 +242,8 @@ function shahDefenderPlaces() {
 				way = lettersAndNumbers.indexOf(shahArray[0]) - lettersAndNumbers.indexOf(shahAttackerArray[0]);
 				var i = lettersAndNumbers.indexOf(shahArray[0]) - 1;
 				var i2 = 1 + lettersAndNumbers.indexOf(shahArray[1]);
-				var t = i - way;
-				for (i; i < t; i++) {
+				var t = lettersAndNumbers.indexOf(shahArray[0]) - way;
+				for (i; i >= t; i--) {
 					defenderPlaceMaker[0] = lettersAndNumbers[i];
 					defenderPlaceMaker[1] = lettersAndNumbers[i2];
 					shahDefenderPlacesList[shahDefenderPlacesCounter] = defenderPlaceMaker.join("");

@@ -224,13 +224,14 @@ function controlDidItBeAttackShah ($attackerPiecePlace, $attackerPiece) {
 		  checkPieceFreeFil(destinations[filCounter]);
 		}
 	    checkDiagonalObstacleFree($attackerPiecePlace);
-		console.log("destinations:");
+		/*console.log("destinations:");
 		console.log(destinations);
 		console.log("diagonalObstacleFreeList:");
 		console.log(diagonalObstacleFreeList);
+		*/
 		var t = 0;
 		for(t = 0; t < 27; t++) {
-			console.log(t);
+			//console.log(t);
 			if (diagonalObstacleFreeList[t] && destinations[t].split("").length > 1 && (lettersAndNumbers.indexOf(destinations[t].split("")[0]) < 8 &&
 			lettersAndNumbers.indexOf(destinations[t].split("")[1]) > 7 && document.getElementById(destinations[t]).innerHTML == "s.shah")) {
 					shahCekmeDurumuBilgileri.shahKonumu = destinations[t];
@@ -486,13 +487,13 @@ function controlDidItBeAttackShah ($attackerPiecePlace, $attackerPiece) {
 		}
 		var t = 0;
 		for( t = 0; t < 8; t++) {
-			console.log(t);
+			//console.log(t);
 			//straightObstacleFreeList[t] 
 			if (destinations[t] && document.getElementById(destinations[t]).innerHTML == "b.shah") {
 					shahCekmeDurumuBilgileri.shahKonumu = destinations[t];
 					shahCekmeDurumuBilgileri.pieceName = $attackerPiece;
 					shahCekmeDurumuBilgileri.piecePlace = $attackerPiecePlace;
-					console.log("hınk");
+					//console.log("hınk");
 					document.getElementById("shah").innerHTML = "Siyah at shah cekti!";
 					shahMatBooleans.siyahShahCekti = true;
 			}
@@ -583,10 +584,11 @@ function controlDidItBeAttackShah ($attackerPiecePlace, $attackerPiece) {
 		  checkPieceFree(destinations[i]);
 		}
 		checkStraightObstacleFree($attackerPiecePlace);
-		console.log("destinations:");
+		/*console.log("destinations:");
 		console.log(destinations);
 		console.log("straightObstacleFreeList:");
 		console.log(straightObstacleFreeList);
+		*/
 		preControlArr = $attackerPiecePlace.split("");
 	    thisLetter = lettersAndNumbers.indexOf(preControlArr[0]);
 		thisNumber = lettersAndNumbers.indexOf(preControlArr[1]);

@@ -5,19 +5,25 @@ var itsSafeWhiteShahDestination;
 
 var itsSafeBlackShahDestination;
 
-var safePlacesForShah = [];
-var safePlacesCounter = 0;
+var safePlacesForWhiteShah = [];
+var safePlacesWhiteCounter = 0;
+
+var safePlacesForBlackShah = [];
+var safePlacesBlackCounter = 0;
 
 function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	//üst ve alt düz
 	placeDeneme = $placeWillBeControlled.split("");
 	var i = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i++;
-	if(i < 7) {
+	if(i < 8) {
 		for(i; i < 8; i++) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.kale") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -32,11 +38,14 @@ function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	placeDeneme = $placeWillBeControlled.split("");
 	i = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i--;
-	if(i > 0) {
+	if(i >= 0) {
 		for(i; i >= 0; i--) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.kale") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -52,11 +61,14 @@ function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	placeDeneme = $placeWillBeControlled.split("");
 	i = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i++;
-	if(i < 15) {
+	if(i < 16) {
 		for(i; i < 16; i++) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.kale") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -71,11 +83,14 @@ function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	placeDeneme = $placeWillBeControlled.split("");
 	i = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i--;
-	if(i > 8) {
+	if(i >= 8) {
 		for(i; i >= 8; i--) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.kale") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -96,12 +111,16 @@ function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	var i2 = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i++;
 	i2++;
-	if(i < 7) {
+	if(i < 8) {
 		for(i; i < 8; i++) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDeneme[1] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					i2++;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.fil") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -121,12 +140,16 @@ function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	i2 = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i--;
 	i2--;
-	if(i > 0) {
+	if(i >= 0) {
 		for(i; i >= 0; i--) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDeneme[1] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					i2--;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.fil") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -145,12 +168,16 @@ function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	i++;
 	i2 = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i2--;
-	if(i < 15) {
+	if(i < 16) {
 		for(i; i < 16; i++) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDeneme[0] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					i2--;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.fil") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -169,12 +196,16 @@ function isItSafeWhiteShahDestination ($placeWillBeControlled) {
 	i2 = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i--;
 	i2++;
-	if(i > 8) {
+	if(i >= 8) {
 		for(i; i >= 8; i--) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDeneme[0] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
+					i2++;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "s.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "s.fil") {
 					itsSafeWhiteShahDestination = false;
 					return 5;
@@ -465,13 +496,17 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDeneme = $placeWillBeControlled.split("");
 	var i = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i++;
-	if(i < 7) {
+	if(i < 8) {
 		for(i; i < 8; i++) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.kale") {
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -484,13 +519,17 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDeneme = $placeWillBeControlled.split("");
 	i = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i--;
-	if(i > 0) {
+	if(i >= 0) {
 		for(i; i >= 0; i--) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.kale") {
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -504,13 +543,17 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDeneme = $placeWillBeControlled.split("");
 	i = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i++;
-	if(i < 15) {
+	if(i < 16) {
 		for(i; i < 16; i++) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.kale") {
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -523,13 +566,17 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDeneme = $placeWillBeControlled.split("");
 	i = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i--;
-	if(i > 8) {
+	if(i >= 8) {
 		for(i; i >= 8; i--) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.kale") {
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -548,14 +595,19 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	var i2 = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i++;
 	i2++;
-	if(i < 7) {
+	if(i < 8) {
 		for(i; i < 8; i++) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDeneme[1] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					i2++;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.fil") {
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -573,14 +625,19 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	i2 = lettersAndNumbers.indexOf(placeDeneme[1]);
 	i--;
 	i2--;
-	if(i > 0) {
+	if(i >= 0) {
 		for(i; i >= 0; i--) {
 			placeDeneme[0] = lettersAndNumbers[i];
 			placeDeneme[1] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					i2--;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.fil") {
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -597,14 +654,19 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	i++;
 	i2 = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i2--;
-	if(i < 15) {
+	if(i < 16) {
 		for(i; i < 16; i++) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDeneme[0] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					i2--;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.fil") {
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -618,16 +680,24 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	//sol üst
 	placeDeneme = $placeWillBeControlled.split("");
 	i = lettersAndNumbers.indexOf(placeDeneme[1]);
+	i2 = lettersAndNumbers.indexOf(placeDeneme[0]);
 	i--;
 	i2++;
-	if(i > 8) {
+	if(i >= 8) {
 		for(i; i >= 8; i--) {
 			placeDeneme[1] = lettersAndNumbers[i];
 			placeDeneme[0] = lettersAndNumbers[i2];
 			placeDenemeJoin = placeDeneme.join("");
 			if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML) {
+				if(document.getElementById(placeDenemeJoin).innerHTML == "s.shah") {
+					i2++;
+					continue;
+				}
 				if(document.getElementById(placeDenemeJoin).innerHTML == "b.vezir" || document.getElementById(placeDenemeJoin).innerHTML == "b.fil") {
+					console.log(placeDenemeJoin);
+					console.log(document.getElementById(placeDenemeJoin).innerHTML);
 					itsSafeBlackShahDestination = false;
+					console.log("");
 					return 5;
 					break;
 				} else {
@@ -652,6 +722,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -668,6 +739,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -684,6 +756,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -700,6 +773,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -716,6 +790,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -732,6 +807,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -748,6 +824,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -764,6 +841,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.at") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -780,6 +858,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.piyon") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -795,6 +874,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.piyon") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -811,6 +891,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -826,6 +907,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -838,6 +920,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -850,6 +933,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -863,6 +947,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -875,6 +960,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -890,6 +976,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;
@@ -905,6 +992,7 @@ function isItSafeBlackShahDestination ($placeWillBeControlled) {
 	placeDenemeJoin = placeDeneme.join("");
 	if(document.getElementById(placeDenemeJoin) && document.getElementById(placeDenemeJoin).innerHTML == "b.shah") {
 		itsSafeBlackShahDestination = false;
+		console.log("");
 		return 5;
 	} else {
 		itsSafeBlackShahDestination = true;

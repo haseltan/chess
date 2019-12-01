@@ -1,0 +1,9 @@
+Bir projeye başlıyorsam onu tamamen bitirmeye çalışıcam.
+En son doğru biçimde oynanabilir olmalı. 
+Belki üzerinde değişiklik yapılabiliyor olmalı. O şekilde kodlanmalı ve 
+üzerine anlaşılır olması için yorumlar yazılmalı.
+
+Program yazarken kodlarımız neden sonuç zincirini oluşturuyor.
+Neden sonuç zincirlerinden bizim daha çok oluşturmak istediğimizi seçmeliyiz bunun 
+için başlamadan önce düşünmeliyiz hangi şekilde kodlasam diye.
+

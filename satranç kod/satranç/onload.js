@@ -8,8 +8,8 @@
 function gameStart() {
 	
 	
-	console.log("gameStart() fonksiyonu çalıştırıldı.");
-	console.log("");
+	//console.log("gameStart() fonksiyonu çalıştırıldı.");
+	//console.log("");
 	
 	
 	

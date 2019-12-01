@@ -1,4 +1,5 @@
 function endTheGame(){
+	document.getElementById("hamle").innerHTML = "Oyun bitti.";
 	document.getElementById("a1").onclick= "";
 	document.getElementById("a2").onclick= "";
 	document.getElementById("a3").onclick= "";

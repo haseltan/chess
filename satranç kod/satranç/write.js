@@ -1,6 +1,8 @@
 function write(writePlace, thing) {
   //console.log("write çalisiyor");
   document.getElementById(writePlace).innerHTML = thing;
+  document.getElementById(writePlace + "img").src = thing + ".png";
+   //document.getElementById(writePlace + "img").setAttribute("class", "c4img"); 
   moveClear();
   if(BwhiteTurn) {
     blackTurn();
@@ -10,7 +12,13 @@ function write(writePlace, thing) {
   document.getElementById(writePlace).onclick = function() {move(writePlace)};
   document.getElementById(oldPlace).onclick = "";
   document.getElementById(oldPlace).innerHTML = "";
+  document.getElementById(oldPlace + "img").src = ""
   controlDidItBeAttackShah(writePlace, thing);
+
+ if(BwhiteTurn && !shahMatBooleans.siyahShahCekti) {
+	  beyazShahGuvendeMi();
+  }
+ 
   if(BwhiteTurn && shahMatBooleans.siyahShahCekti) {
 	  beyazShahMatOlduMu();
 	    if (beyazShahMatOldu) {
@@ -18,6 +26,11 @@ function write(writePlace, thing) {
 	  endTheGame();
   }
   }
+  
+  if(BblackTurn && !shahMatBooleans.beyazShahCekti) {
+	  siyahShahGuvendeMi();
+  }
+  
    if(BblackTurn && shahMatBooleans.beyazShahCekti) {
 	  siyahShahMatOlduMu();
 	   if (siyahShahMatOldu) {
